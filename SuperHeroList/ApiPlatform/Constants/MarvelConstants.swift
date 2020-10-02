@@ -20,4 +20,8 @@ internal struct MarvelConstants {
 // Endpoints constants
 internal extension MarvelConstants {
     static let endpointCharacters = "characters"
+    static let endpointComics = "comics"
+    static let endpointSeries = "series"
+    static let endpointStories = "stories"
+    static let endpointEvents = "events"
 }

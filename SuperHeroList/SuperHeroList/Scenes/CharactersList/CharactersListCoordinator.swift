@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ApiPlatform
+import Domain
 
 class CharactersListCoordinator: Coordinator {
     var window: UIWindow?
@@ -27,6 +28,7 @@ class CharactersListCoordinator: Coordinator {
         let vc = CharactersListViewController.instatiate()
         
         vc.viewModel = CharactersListViewModel(useCase: API.buildCharactersUseCase())
+        vc.coordinator = self
         
         nav.pushViewController(vc, animated: false)
         
@@ -34,5 +36,15 @@ class CharactersListCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
+    func navigateToDetailedCharacter(character: Character) {
+        let vc = DetailedCharacterViewController.instatiate()
+     
+        vc.viewModel = DetailedCharacterViewModel(
+            character: character,
+            useCase: API.buildCharacterUseCase(character: character)
+        )
+        
+        self.nav.show(vc, sender: nil)
+    }
     
 }

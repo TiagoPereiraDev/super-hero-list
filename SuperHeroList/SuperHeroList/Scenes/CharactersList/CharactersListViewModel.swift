@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 
 class CharactersListViewModel: ViewModelType {
-    
     let useCase: ListCharactersUseCase
     private let fetchMoreData = PublishSubject<Void>()
     var charactersList: [Character]
@@ -75,7 +74,6 @@ class CharactersListViewModel: ViewModelType {
     func fetchMore() {
         self.fetchMoreData.onNext(Void())
     }
-
 }
 
 extension CharactersListViewModel {

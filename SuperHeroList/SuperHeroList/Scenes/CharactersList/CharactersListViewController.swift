@@ -12,6 +12,8 @@ import UIScrollView_InfiniteScroll
 
 class CharactersListViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
     
+    weak var coordinator: CharactersListCoordinator?
+    
     var viewModel: CharactersListViewModel?
     var activityIndicator: MarvelActivityIndicator?
     
@@ -32,6 +34,15 @@ class CharactersListViewController: UIViewController, UIScrollViewDelegate, UITa
         self.charactersTableView.addInfiniteScroll { _ in
             self.viewModel?.fetchMore()
         }
+        
+        self.charactersTableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            guard let cell = self.charactersTableView.cellForRow(at: indexPath) as? CharacterTableViewCell,
+                let character = cell.character else {
+                return
+            }
+            
+            self.coordinator?.navigateToDetailedCharacter(character: character)
+        }).disposed(by: self.disposeBag)
         
         transform()
     }
@@ -57,7 +68,7 @@ extension CharactersListViewController {
             }
             
             
-            cell.titleLabel?.text = item.name
+            cell.character = item
             
             return cell
         }.disposed(by: disposeBag)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Domain
 
 public class API {
     
@@ -17,6 +18,10 @@ public class API {
     
     public static func buildCharactersUseCase() -> CharactersUseCase {
         return CharactersUseCase(endpoint: basePath)
+    }
+    
+    public static func buildCharacterUseCase(character: Character) -> CharacterUseCase {
+        return CharacterUseCase(endpoint: "\(basePath)/characters/\(character.id)")
     }
     
 }

@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import Domain
 
 class CharacterTableViewCell: UITableViewCell {
+    
+    var character: Character? {
+        didSet {
+            DispatchQueue.main.async {
+                self.populateCell()
+            }
+        }
+    }
     
     @IBOutlet var titleLabel: UILabel!
 
@@ -17,10 +26,10 @@ class CharacterTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func populateCell() {
+        guard let character = self.character else { return }
+        
+        self.titleLabel.text = character.name
     }
     
 }

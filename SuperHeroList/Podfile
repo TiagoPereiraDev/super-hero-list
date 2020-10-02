@@ -24,5 +24,8 @@ target 'SuperHeroList' do
   use_frameworks!
 
   # Pods for SuperHeroList
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  pod 'UIScrollView-InfiniteScroll'
 
 end

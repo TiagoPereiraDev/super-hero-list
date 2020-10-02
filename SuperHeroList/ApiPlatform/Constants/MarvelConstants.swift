@@ -14,6 +14,7 @@ internal struct MarvelConstants {
     static let basePath = "https://gateway.marvel.com"
     static let privateKey = "MARVEL_PRIVATE_KEY"
     static let publicKey = "MARVEL_PUBLIC_KEY"
+    static let limit = 30
 }
 
 // Endpoints constants

@@ -23,18 +23,14 @@ internal final class Network {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
 
-    func getItems(_ path: String) -> Observable<Data> {
+    func getItems(_ path: String, parameters: [String: Any]) -> Observable<Data> {
         let absolutePath = "\(endPoint)/\(path)"
         return Session.marvelSession.rx
-            .request(.get, absolutePath)
+            .request(.get, absolutePath, parameters: parameters)
             .debug()
             .responseData()
             .observeOn(scheduler)
             .map { (response, data) -> Data in
-//                if response.statusCode != 200 {
-//                    print("### Error \(String(data: data, encoding: .utf8))")
-//                }
-                
                 return data
         }
     }

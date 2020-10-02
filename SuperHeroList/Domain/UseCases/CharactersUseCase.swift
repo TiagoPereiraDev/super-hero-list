@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 public protocol ListCharactersUseCase {
-    func characters(offset: Int) -> Observable<CharactersResponse>
+    func characters(offset: Int, search: String?) -> Observable<CharactersResponse>
 }

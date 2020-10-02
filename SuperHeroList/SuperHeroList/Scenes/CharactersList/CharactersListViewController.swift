@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import UIScrollView_InfiniteScroll
 
-class CharactersListViewController: UIViewController {
+class CharactersListViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
     
     var viewModel: CharactersListViewModel?
-
+    var activityIndicator: MarvelActivityIndicator?
+    
+    let obs = BehaviorSubject<Int>.init(value: 1)
+    let disposeBag = DisposeBag()
+    
+    @IBOutlet var charactersTableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        self.activityIndicator = MarvelActivityIndicator(container: self.view)
+        
+        CharacterTableViewCell.registerInTableView(tableView: self.charactersTableView)
+        
+        self.charactersTableView.addInfiniteScroll { _ in
+            self.viewModel?.fetchMore()
+        }
+        
         transform()
     }
 }
@@ -26,7 +43,35 @@ extension CharactersListViewController {
         guard let viewModel = self.viewModel else { return }
         
         let output = viewModel.transform(
-            input: CharactersListViewModel.Input()
+            input: CharactersListViewModel.Input(
+                search: self.searchBar.rx.text.asDriver()
+            )
         )
+        
+        output.characters.bind(to: self.charactersTableView.rx.items){(tv, row, item) -> UITableViewCell in
+            guard let cell = tv.dequeueReusableCell(withIdentifier: CharacterTableViewCell.className()) as? CharacterTableViewCell else {
+                let cell = UITableViewCell(style: .default, reuseIdentifier: "default")
+                cell.textLabel?.text = item.name
+                
+                return cell
+            }
+            
+            
+            cell.titleLabel?.text = item.name
+            
+            return cell
+        }.disposed(by: disposeBag)
+        
+        output.fetchingMore.subscribe(onNext: { fetching in
+            if !fetching {
+                DispatchQueue.main.async {
+                    self.charactersTableView.finishInfiniteScroll(completion: nil)
+                }
+            }
+        }).disposed(by: self.disposeBag)
+        
+        self.activityIndicator?.registerLoading(loading: output.loading)
+        
+        self.viewModel?.fetchMore()
     }
 }

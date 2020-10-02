@@ -18,8 +18,17 @@ public class CharactersUseCase: ListCharactersUseCase {
         self.network = Network(endpoint)
     }
     
-    public func characters(offset: Int) -> Observable<CharactersResponse> {
-        return network.getItems(MarvelConstants.endpointCharacters).map { data -> CharactersResponse in
+    public func characters(offset: Int, search: String?) -> Observable<CharactersResponse> {
+        var parameters: [String: Any] = [
+            "offset":offset,
+            "limit": MarvelConstants.limit
+        ];
+        
+        if let noEmptySearch = search, !noEmptySearch.isEmpty {
+            parameters["nameStartsWith"] = noEmptySearch
+        }
+        
+        return network.getItems(MarvelConstants.endpointCharacters,parameters: parameters).map { data -> CharactersResponse in
             return try JSONDecoder().decode(CharactersResponse.self, from: data)
         }
     }

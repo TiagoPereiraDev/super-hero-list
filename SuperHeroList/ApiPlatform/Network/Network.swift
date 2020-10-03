@@ -23,7 +23,7 @@ internal final class Network {
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
 
-    func getItems(_ path: String, parameters: [String: Any]) -> Observable<Data> {
+    func getItems(_ path: String, parameters: [String: Any]?) -> Observable<Data> {
         let absolutePath = "\(endPoint)/\(path)"
         return Session.marvelSession.rx
             .request(.get, absolutePath, parameters: parameters)

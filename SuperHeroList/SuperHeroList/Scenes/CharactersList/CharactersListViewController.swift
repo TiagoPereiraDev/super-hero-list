@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 import UIScrollView_InfiniteScroll
 
-class CharactersListViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
-    
+class CharactersListViewController: UIViewController {
     weak var coordinator: CharactersListCoordinator?
     
     var viewModel: CharactersListViewModel?
@@ -30,6 +29,8 @@ class CharactersListViewController: UIViewController, UIScrollViewDelegate, UITa
         self.activityIndicator = MarvelActivityIndicator(container: self.view)
         
         CharacterTableViewCell.registerInTableView(tableView: self.charactersTableView)
+        
+        self.charactersTableView.delegate = self
         
         self.charactersTableView.addInfiniteScroll { _ in
             self.viewModel?.fetchMore()
@@ -84,5 +85,12 @@ extension CharactersListViewController {
         self.activityIndicator?.registerLoading(loading: output.loading)
         
         self.viewModel?.fetchMore()
+    }
+}
+
+// View model input and output section
+extension CharactersListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
     }
 }

@@ -60,6 +60,8 @@ class CharactersListViewModel: ViewModelType {
             return self.charactersList
         }
         
+        let noData = characters.map { $0.count == 0}
+        
         fetchMore()
         
         let finalCharacters = Observable.merge(characters, cleanData)
@@ -67,7 +69,8 @@ class CharactersListViewModel: ViewModelType {
         return Output(
             characters: finalCharacters,
             loading: self.loading.asObservable(),
-            fetchingMore: self.fetchingMore.asObservable()
+            fetchingMore: self.fetchingMore.asObservable(),
+            noData: noData
         )
     }
     
@@ -84,5 +87,6 @@ extension CharactersListViewModel {
         let characters: Observable<[Character]>
         let loading: Observable<Bool>
         let fetchingMore: Observable<Bool>
+        let noData: Observable <Bool>
     }
 }

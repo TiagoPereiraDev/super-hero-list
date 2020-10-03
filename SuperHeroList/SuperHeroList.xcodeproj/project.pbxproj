@@ -59,6 +59,8 @@
 		27ECEF972527CAC7000E0767 /* DetailedCharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27ECEF952527CAC7000E0767 /* DetailedCharacterCollectionViewCell.xib */; };
 		27ECEF992527CB9A000E0767 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ECEF982527CB9A000E0767 /* UICollectionViewCell.swift */; };
 		27ECEF9B2527E1E7000E0767 /* MarvelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ECEF9A2527E1E7000E0767 /* MarvelCollectionView.swift */; };
+		27ED706A2528AB6B009B5243 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED70692528AB6B009B5243 /* UIView.swift */; };
+		27ED706C2528C495009B5243 /* NoDataFound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED706B2528C495009B5243 /* NoDataFound.swift */; };
 		27FEB8002527FC320028901F /* UiElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB7FF2527FC320028901F /* UiElements.swift */; };
 		9997F331E7649943CCDB6862 /* Pods_ApiPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C9EF68A02A7230EA119722 /* Pods_ApiPlatform.framework */; };
 		FFF997A5FFE976FD1FFAACAC /* Pods_SuperHeroList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BF84DBB44919C941E76DC5 /* Pods_SuperHeroList.framework */; };
@@ -172,6 +174,8 @@
 		27ECEF952527CAC7000E0767 /* DetailedCharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedCharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		27ECEF982527CB9A000E0767 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		27ECEF9A2527E1E7000E0767 /* MarvelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCollectionView.swift; sourceTree = "<group>"; };
+		27ED70692528AB6B009B5243 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		27ED706B2528C495009B5243 /* NoDataFound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataFound.swift; sourceTree = "<group>"; };
 		27FEB7FF2527FC320028901F /* UiElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiElements.swift; sourceTree = "<group>"; };
 		39A10DD1483C8377A7B3363F /* Pods-ApiPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiPlatform.debug.xcconfig"; path = "Target Support Files/Pods-ApiPlatform/Pods-ApiPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		7E4BDF780D03818B605695A6 /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 				27ECEF5225265827000E0767 /* UIViewController.swift */,
 				27ECEF6225268BA2000E0767 /* UITableViewCell.swift */,
 				27ECEF982527CB9A000E0767 /* UICollectionViewCell.swift */,
+				27ED70692528AB6B009B5243 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			children = (
 				27ECEF6B25279D48000E0767 /* MarvelActivityIndicator.swift */,
 				27ECEF9A2527E1E7000E0767 /* MarvelCollectionView.swift */,
+				27ED706B2528C495009B5243 /* NoDataFound.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -757,6 +763,7 @@
 			files = (
 				27ECEF6325268BA2000E0767 /* UITableViewCell.swift in Sources */,
 				27ECEF962527CAC7000E0767 /* DetailedCharacterCollectionViewCell.swift in Sources */,
+				27ED706C2528C495009B5243 /* NoDataFound.swift in Sources */,
 				27ECEF5825265ECB000E0767 /* CharactersListViewController.swift in Sources */,
 				27ECEF47252530E0000E0767 /* ViewModelType.swift in Sources */,
 				27ECEF6C25279D48000E0767 /* MarvelActivityIndicator.swift in Sources */,
@@ -770,6 +777,7 @@
 				27ECEF5325265827000E0767 /* UIViewController.swift in Sources */,
 				27ECEF5525265D79000E0767 /* CharactersListCoordinator.swift in Sources */,
 				27ECEF6825268DFC000E0767 /* CharacterTableViewCell.swift in Sources */,
+				27ED706A2528AB6B009B5243 /* UIView.swift in Sources */,
 				27ECEF4925253132000E0767 /* CharactersListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

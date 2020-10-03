@@ -105,20 +105,26 @@ class DetailedCharacterViewModel: ViewModelType {
                    return self.events
                }
         
+        
+        
         return Output(
             name: self.character.name,
             description: self.character.description,
             thumbnail: self.character.thumbnail,
             comics: comicsObs,
+            noComis: comicsObs.map{ $0.count == 0},
             loadingComics: self.loadingComics,
             fetchingMoreComics: self.fetchingMoreComics,
             series: seriesObs,
+            noSeries: seriesObs.map{ $0.count == 0},
             loadingSeries: self.loadingSeries,
             fetchingMoreSeries: self.fetchingMoreSeries,
             stories: storiesObs,
+            noStories: storiesObs.map{ $0.count == 0},
             loadingStories: self.loadingStories,
             fetchingMoreStories: self.fetchingMoreStories,
             events: eventsObs,
+            noEvents: eventsObs.map{ $0.count == 0},
             loadingEvents: self.loadingEvents,
             fetchingMoreEvents: self.fetchingMoreEvents
         )
@@ -138,15 +144,19 @@ extension DetailedCharacterViewModel {
         let description: String?
         let thumbnail: Thumbnail?
         let comics: Observable<[Comic]>
+        let noComis: Observable<Bool>
         let loadingComics: Observable<Bool>
         let fetchingMoreComics: Observable<Bool>
         let series: Observable<[Serie]>
+        let noSeries: Observable<Bool>
         let loadingSeries: Observable<Bool>
         let fetchingMoreSeries: Observable<Bool>
         let stories: Observable<[Story]>
+        let noStories: Observable<Bool>
         let loadingStories: Observable<Bool>
         let fetchingMoreStories: Observable<Bool>
         let events: Observable<[Domain.Event]>
+        let noEvents: Observable<Bool>
         let loadingEvents: Observable<Bool>
         let fetchingMoreEvents: Observable<Bool>
     }

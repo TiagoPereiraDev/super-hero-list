@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersListViewController" customModule="SuperHeroList" customModuleProvider="target">
             <connections>
                 <outlet property="charactersTableView" destination="Brm-89-Okd" id="aNO-eC-fFy"/>
+                <outlet property="containerView" destination="UNe-nt-Xcd" id="Rm2-2Q-GAF"/>
                 <outlet property="searchBar" destination="6b2-NA-CoK" id="Fby-2m-xRO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,19 +25,31 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-89-Okd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-nt-Xcd">
                     <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-89-Okd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="762"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Brm-89-Okd" secondAttribute="bottom" id="EwH-cc-3CX"/>
+                        <constraint firstItem="Brm-89-Okd" firstAttribute="leading" secondItem="UNe-nt-Xcd" secondAttribute="leading" id="Rio-Ks-RwS"/>
+                        <constraint firstAttribute="trailing" secondItem="Brm-89-Okd" secondAttribute="trailing" id="TXS-vH-E7u"/>
+                        <constraint firstItem="Brm-89-Okd" firstAttribute="top" secondItem="UNe-nt-Xcd" secondAttribute="top" id="rio-MN-X1p"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="UNe-nt-Xcd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5eG-Af-yx7"/>
                 <constraint firstItem="6b2-NA-CoK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SDe-cD-JCu"/>
-                <constraint firstItem="Brm-89-Okd" firstAttribute="top" secondItem="6b2-NA-CoK" secondAttribute="bottom" id="Yyc-N6-cgw"/>
-                <constraint firstItem="Brm-89-Okd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cQ9-wT-cWx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Brm-89-Okd" secondAttribute="trailing" id="eKM-y6-ia4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Brm-89-Okd" secondAttribute="bottom" id="fcl-hm-4Pr"/>
+                <constraint firstItem="UNe-nt-Xcd" firstAttribute="top" secondItem="6b2-NA-CoK" secondAttribute="bottom" id="VsL-6F-l1J"/>
+                <constraint firstItem="UNe-nt-Xcd" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="fDK-Ww-wrh"/>
                 <constraint firstItem="6b2-NA-CoK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="g34-iB-sq5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UNe-nt-Xcd" secondAttribute="trailing" id="pJW-8P-Mrn"/>
                 <constraint firstItem="6b2-NA-CoK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pb5-a4-5Pf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

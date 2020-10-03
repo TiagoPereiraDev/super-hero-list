@@ -21,6 +21,8 @@ class CharactersListViewController: UIViewController {
     
     @IBOutlet var charactersTableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var containerView: UIView!
+    let noData = NoDataFound()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,8 @@ class CharactersListViewController: UIViewController {
         
         self.title = "Heroes List"
         
-        self.activityIndicator = MarvelActivityIndicator(container: self.view)
+        self.activityIndicator = MarvelActivityIndicator(container: self.containerView)
+        self.noData.setContainer(containerView: self.containerView)
         
         CharacterTableViewCell.registerInTableView(tableView: self.charactersTableView)
         
@@ -81,6 +84,8 @@ extension CharactersListViewController {
             return cell
         }.disposed(by: disposeBag)
         
+        self.noData.regiterDataObserver(obs: output.noData)
+        
         output.fetchingMore.subscribe(onNext: { fetching in
             if !fetching {
                 DispatchQueue.main.async {
@@ -90,6 +95,8 @@ extension CharactersListViewController {
         }).disposed(by: self.disposeBag)
         
         self.activityIndicator?.registerLoading(loading: output.loading)
+        
+        
         
         self.viewModel?.fetchMore()
     }

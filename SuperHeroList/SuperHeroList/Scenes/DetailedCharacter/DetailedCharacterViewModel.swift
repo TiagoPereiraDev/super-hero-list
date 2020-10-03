@@ -108,6 +108,7 @@ class DetailedCharacterViewModel: ViewModelType {
         return Output(
             name: self.character.name,
             description: self.character.description,
+            thumbnail: self.character.thumbnail,
             comics: comicsObs,
             loadingComics: self.loadingComics,
             fetchingMoreComics: self.fetchingMoreComics,
@@ -135,6 +136,7 @@ extension DetailedCharacterViewModel {
     struct Output {
         let name: String
         let description: String?
+        let thumbnail: Thumbnail?
         let comics: Observable<[Comic]>
         let loadingComics: Observable<Bool>
         let fetchingMoreComics: Observable<Bool>

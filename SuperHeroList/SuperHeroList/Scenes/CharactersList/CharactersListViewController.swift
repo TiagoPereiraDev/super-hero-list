@@ -26,6 +26,8 @@ class CharactersListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.title = "Heroes List"
+        
         self.activityIndicator = MarvelActivityIndicator(container: self.view)
         
         CharacterTableViewCell.registerInTableView(tableView: self.charactersTableView)
@@ -35,6 +37,11 @@ class CharactersListViewController: UIViewController {
         self.charactersTableView.addInfiniteScroll { _ in
             self.viewModel?.fetchMore()
         }
+        
+        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator.color = Colors.red
+        
+        self.charactersTableView.infiniteScrollIndicatorView = activityIndicator
         
         self.charactersTableView.rx.itemSelected.subscribe(onNext: { indexPath in
             guard let cell = self.charactersTableView.cellForRow(at: indexPath) as? CharacterTableViewCell,

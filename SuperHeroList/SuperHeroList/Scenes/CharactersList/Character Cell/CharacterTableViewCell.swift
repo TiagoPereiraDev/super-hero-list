@@ -32,6 +32,8 @@ class CharacterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.selectionStyle = .none
+        
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOpacity = 0.4
         shadowView.layer.shadowOffset = .zero
@@ -40,10 +42,11 @@ class CharacterTableViewCell: UITableViewCell {
         
         containerView.layer.cornerRadius = 5
         containerView.layer.masksToBounds = true
+        self.contentView.backgroundColor = Colors.lightGray
         
         self.setThumbnailPlaceholder()
         
-        self.titleLabel.textColor = Colors.gray
+        self.titleLabel.textColor = Colors.black
     }
 
     func populateCell() {

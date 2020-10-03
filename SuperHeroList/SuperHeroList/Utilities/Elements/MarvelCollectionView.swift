@@ -30,6 +30,12 @@ class MarvelCollectionView: UICollectionView {
             
             self.infiniteScrollDirection = .horizontal
             
+            let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+                   activityIndicator.color = Colors.red
+                   
+            self.infiniteScrollIndicatorView = activityIndicator
+            
+            
             self.addInfiniteScroll { (cv) in
                 self.fecthMoreElements.onNext(Void())
             }

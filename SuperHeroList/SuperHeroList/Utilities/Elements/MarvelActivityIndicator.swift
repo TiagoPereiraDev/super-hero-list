@@ -18,7 +18,7 @@ class MarvelActivityIndicator {
     init(container: UIView) {
         self.container = container
         self.activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-        self.activityIndicator.color = UIColor.brown
+        self.activityIndicator.color = Colors.red
         self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
     }
     

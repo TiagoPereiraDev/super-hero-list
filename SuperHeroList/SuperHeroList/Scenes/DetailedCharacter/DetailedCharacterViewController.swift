@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import ApiPlatform
 
 class DetailedCharacterViewController: UIViewController {
     
@@ -25,6 +26,11 @@ class DetailedCharacterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Hero"
+        
+        self.nameLabel.textColor = Colors.black
+        self.descriptionLabel.textColor = Colors.black
         
         DetailedCharacterCollectionViewCell.registerInCollectionView(collectionView: self.comicsCollectionView)
         DetailedCharacterCollectionViewCell.registerInCollectionView(collectionView: self.seriesCollectionView)
@@ -57,6 +63,20 @@ extension DetailedCharacterViewController {
         
         self.nameLabel.text = output.name
         self.descriptionLabel.text = output.description
+        
+        self.thumbnailImageView.alpha = 0.5
+        
+        if let thumbnail = output.thumbnail {
+            API.fetchImage(thumbnail: thumbnail).subscribe(onNext: { image in
+                guard let image = image else { return }
+                UIImageView.animate(withDuration: 0.2, delay: 0, options: .transitionCrossDissolve, animations: {
+                    self.thumbnailImageView.image = image
+                    self.thumbnailImageView.alpha = 1.0
+                } , completion: nil)
+            }).disposed(by: self.disposeBag)
+        }
+        
+        
         
         self.setComicsCollectionViewData(output: output)
         self.setSeriesCollectionViewData(output: output)

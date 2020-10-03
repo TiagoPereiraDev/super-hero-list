@@ -29,32 +29,32 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0m-R5-gk8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1676.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMn-g7-LQG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="10" y="10" width="394" height="24"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wot-1S-YIC">
-                                    <rect key="frame" x="10" y="30.5" width="394" height="150"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="wot-1S-YIC">
+                                    <rect key="frame" x="10" y="44" width="394" height="150"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="eOC-1s-hBh"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snY-GX-XO8">
-                                    <rect key="frame" x="10" y="190.5" width="394" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snY-GX-XO8">
+                                    <rect key="frame" x="10" y="204" width="394" height="20.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CIk-Ha-JAa">
-                                    <rect key="frame" x="10" y="231" width="394" height="1422"/>
+                                    <rect key="frame" x="10" y="244.5" width="394" height="1422"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-rw-uXh">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -73,7 +73,7 @@
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yg-kj-qWw">
                                             <rect key="frame" x="0.0" y="360.5" width="394" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -92,7 +92,7 @@
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eG-aE-jyn">
                                             <rect key="frame" x="0.0" y="721" width="394" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -111,7 +111,7 @@
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVa-Ku-En9">
                                             <rect key="frame" x="0.0" y="1081.5" width="394" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -136,11 +136,11 @@
                                 <constraint firstItem="snY-GX-XO8" firstAttribute="top" secondItem="wot-1S-YIC" secondAttribute="bottom" constant="10" id="IYI-Qd-CJX"/>
                                 <constraint firstItem="snY-GX-XO8" firstAttribute="leading" secondItem="H0m-R5-gk8" secondAttribute="leading" constant="10" id="Jzh-1i-Err"/>
                                 <constraint firstItem="wot-1S-YIC" firstAttribute="leading" secondItem="H0m-R5-gk8" secondAttribute="leading" constant="10" id="Qdw-Xb-4cj"/>
-                                <constraint firstItem="FMn-g7-LQG" firstAttribute="leading" secondItem="H0m-R5-gk8" secondAttribute="leading" id="Ur7-bQ-Ak5"/>
-                                <constraint firstAttribute="trailing" secondItem="FMn-g7-LQG" secondAttribute="trailing" id="Y9b-Qk-oWJ"/>
+                                <constraint firstItem="FMn-g7-LQG" firstAttribute="leading" secondItem="H0m-R5-gk8" secondAttribute="leading" constant="10" id="Ur7-bQ-Ak5"/>
+                                <constraint firstAttribute="trailing" secondItem="FMn-g7-LQG" secondAttribute="trailing" constant="10" id="Y9b-Qk-oWJ"/>
                                 <constraint firstItem="wot-1S-YIC" firstAttribute="top" secondItem="FMn-g7-LQG" secondAttribute="bottom" constant="10" id="ekE-3P-dle"/>
                                 <constraint firstAttribute="trailing" secondItem="CIk-Ha-JAa" secondAttribute="trailing" constant="10" id="eya-Ky-xkX"/>
-                                <constraint firstItem="FMn-g7-LQG" firstAttribute="top" secondItem="H0m-R5-gk8" secondAttribute="top" id="ljq-wn-nGH"/>
+                                <constraint firstItem="FMn-g7-LQG" firstAttribute="top" secondItem="H0m-R5-gk8" secondAttribute="top" constant="10" id="ljq-wn-nGH"/>
                                 <constraint firstAttribute="trailing" secondItem="wot-1S-YIC" secondAttribute="trailing" constant="10" id="wuy-Ng-cTE"/>
                                 <constraint firstItem="CIk-Ha-JAa" firstAttribute="top" secondItem="snY-GX-XO8" secondAttribute="bottom" constant="20" id="x4D-Hd-NUa"/>
                                 <constraint firstAttribute="bottom" secondItem="CIk-Ha-JAa" secondAttribute="bottom" constant="10" id="xoO-eV-zyz"/>
@@ -170,4 +170,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>
     </objects>
+    <resources>
+        <image name="marvel" width="315" height="201"/>
+    </resources>
 </document>

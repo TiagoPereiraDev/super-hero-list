@@ -39,3 +39,14 @@ target 'SuperHeroList' do
   pod 'UIScrollView-InfiniteScroll'
 
 end
+
+target 'SuperHeroListTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SuperHeroList
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  pod 'RxTest'
+
+end

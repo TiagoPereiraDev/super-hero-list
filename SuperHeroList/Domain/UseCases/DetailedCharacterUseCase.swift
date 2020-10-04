@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 
+/// Protocol to be used in the api in order to know which functions do we want to cover for
+/// for detailed character
 public protocol DetailedCharacterUseCase {
     func comics(offset: Int, characterId: Double) -> Observable<ComicsResponse>
     func series(offset: Int, characterId: Double) -> Observable<SeriesResponse>

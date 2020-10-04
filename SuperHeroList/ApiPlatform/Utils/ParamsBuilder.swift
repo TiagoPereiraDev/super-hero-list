@@ -11,7 +11,7 @@ import Foundation
 
 // Class that implements Builder pattern in order to set the parameters for marvel
 // and return the params ready to send
-public class ParamsBuilder {
+internal class ParamsBuilder {
     private var params:[String: Any] = [:]
     
     public init() {}

@@ -65,6 +65,8 @@
 		27ED708B2528CFD6009B5243 /* ParamsBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED708A2528CFD6009B5243 /* ParamsBuilderTest.swift */; };
 		27ED708F2529F289009B5243 /* ChacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED708E2529F289009B5243 /* ChacheHandler.swift */; };
 		27ED70912529F6D0009B5243 /* CacheHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED70902529F6D0009B5243 /* CacheHandlerTest.swift */; };
+		27ED70922529FBC4009B5243 /* ParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ECEF8E2527B9FF000E0767 /* ParamsBuilder.swift */; };
+		27ED70932529FBCA009B5243 /* ChacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ED708E2529F289009B5243 /* ChacheHandler.swift */; };
 		27FEB8002527FC320028901F /* UiElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FEB7FF2527FC320028901F /* UiElements.swift */; };
 		3782A18D90AAAF1C69F825B2 /* Pods_ApiPlatformTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B7589EAD1B6436C358D047 /* Pods_ApiPlatformTests.framework */; };
 		9997F331E7649943CCDB6862 /* Pods_ApiPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C9EF68A02A7230EA119722 /* Pods_ApiPlatform.framework */; };
@@ -945,8 +947,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ED70932529FBCA009B5243 /* ChacheHandler.swift in Sources */,
 				27ED708B2528CFD6009B5243 /* ParamsBuilderTest.swift in Sources */,
 				27ED70912529F6D0009B5243 /* CacheHandlerTest.swift in Sources */,
+				27ED70922529FBC4009B5243 /* ParamsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

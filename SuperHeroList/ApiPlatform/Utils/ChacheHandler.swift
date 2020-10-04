@@ -9,7 +9,7 @@
 import Foundation
 
 /// Class the will help to handle all the cache used by this api save, clean and get data from cache
-public class CacheHandler<T: AnyObject>  {
+internal class CacheHandler<T: AnyObject>  {
     let cache: NSCache<NSString, T>
     
     public init() {

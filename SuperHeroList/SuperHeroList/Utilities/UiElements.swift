@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+/// Struct with all the main colors used in the application
 struct Colors {
     static let black = UIColor(red: 0.125, green: 0.126, blue: 0.125, alpha: 1.0)
     static let red = UIColor(red: 0.928, green: 0.115, blue: 0.144, alpha: 1.0)

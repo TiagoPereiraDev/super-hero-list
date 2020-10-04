@@ -11,14 +11,12 @@ import RxSwift
 import RxTest
 
 class MarvelActivityIndicatorTest: XCTestCase {
-    var scheduler: TestScheduler!
     var disposeBag: DisposeBag!
     var container: UIView!
     
     override func setUp() {
         container = UIView()
         disposeBag = DisposeBag()
-        scheduler = TestScheduler(initialClock: 0)
     }
     
     func testLoading() {

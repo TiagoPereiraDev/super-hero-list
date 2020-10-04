@@ -60,7 +60,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27ED70702528CF8E009B5243"
+               BlueprintIdentifier = "27ED70A9252A0038009B5243"
                BuildableName = "SuperHeroListTests.xctest"
                BlueprintName = "SuperHeroListTests"
                ReferencedContainer = "container:SuperHeroList.xcodeproj">

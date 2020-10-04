@@ -19,11 +19,6 @@ class DetailedCharacterViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    let noComics = NoDataFound()
-    let noSeries = NoDataFound()
-    let noStories = NoDataFound()
-    let noEvents = NoDataFound()
-    
     @IBOutlet weak var comicsCollectionView: MarvelCollectionView!
     @IBOutlet weak var seriesCollectionView: MarvelCollectionView!
     @IBOutlet weak var storiesCollectionView: MarvelCollectionView!
@@ -47,11 +42,6 @@ class DetailedCharacterViewController: UIViewController {
         self.seriesCollectionView.setConfig(config: .detailedCharacter)
         self.storiesCollectionView.setConfig(config: .detailedCharacter)
         self.eventsCollectionView.setConfig(config: .detailedCharacter)
-        
-        self.noComics.setContainer(containerView: self.comicsCollectionView)
-        self.noSeries.setContainer(containerView: self.seriesCollectionView)
-        self.noStories.setContainer(containerView: self.storiesCollectionView)
-        self.noEvents.setContainer(containerView: self.eventsCollectionView)
         
         transform()
         // Do any additional setup after loading the view.
@@ -97,7 +87,6 @@ extension DetailedCharacterViewController {
 // Comics Section
 extension DetailedCharacterViewController {
     func setComicsCollectionViewData(output: DetailedCharacterViewModel.Output) {
-        self.noComics.regiterDataObserver(obs: output.noComis)
         output.comics.bind(to: self.comicsCollectionView.rx.items){(cv, row, item) -> UICollectionViewCell in
             let tmpCell = cv.dequeueReusableCell(
                 withReuseIdentifier: DetailedCharacterCollectionViewCell.className(),
@@ -115,6 +104,7 @@ extension DetailedCharacterViewController {
         
         self.comicsCollectionView.registerLoading(loading: output.loadingComics)
         self.comicsCollectionView.registerFetchingMore(fetchingMore: output.fetchingMoreComics)
+        self.comicsCollectionView.registerForNoData(noDataObs: output.noComis)
         
         self.comicsCollectionView.startFetchingElements()
     }
@@ -124,7 +114,6 @@ extension DetailedCharacterViewController {
 extension DetailedCharacterViewController {
     
     func setSeriesCollectionViewData(output: DetailedCharacterViewModel.Output) {
-        self.noSeries.regiterDataObserver(obs: output.noSeries)
         output.series.bind(to: self.seriesCollectionView.rx.items){(cv, row, item) -> UICollectionViewCell in
             let tmpCell = cv.dequeueReusableCell(
                 withReuseIdentifier: DetailedCharacterCollectionViewCell.className(),
@@ -142,7 +131,7 @@ extension DetailedCharacterViewController {
         
         self.seriesCollectionView.registerLoading(loading: output.loadingSeries)
         self.seriesCollectionView.registerFetchingMore(fetchingMore: output.fetchingMoreSeries)
-        
+        self.seriesCollectionView.registerForNoData(noDataObs: output.noSeries)
         self.seriesCollectionView.startFetchingElements()
     }
 }
@@ -150,7 +139,6 @@ extension DetailedCharacterViewController {
 // Stories Section
 extension DetailedCharacterViewController {
     func setStoriesCollectionViewData(output: DetailedCharacterViewModel.Output) {
-        self.noStories.regiterDataObserver(obs: output.noStories)
         output.stories.bind(to: self.storiesCollectionView.rx.items){(cv, row, item) -> UICollectionViewCell in
             let tmpCell = cv.dequeueReusableCell(
                 withReuseIdentifier: DetailedCharacterCollectionViewCell.className(),
@@ -168,7 +156,7 @@ extension DetailedCharacterViewController {
         
         self.storiesCollectionView.registerLoading(loading: output.loadingStories)
         self.storiesCollectionView.registerFetchingMore(fetchingMore: output.fetchingMoreStories)
-        
+        self.storiesCollectionView.registerForNoData(noDataObs: output.noSeries)
         self.storiesCollectionView.startFetchingElements()
     }
 }
@@ -176,7 +164,6 @@ extension DetailedCharacterViewController {
 // Events Section
 extension DetailedCharacterViewController {
     func setEventsCollectionViewData(output: DetailedCharacterViewModel.Output) {
-        self.noEvents.regiterDataObserver(obs: output.noEvents)
         output.events.bind(to: self.eventsCollectionView.rx.items){(cv, row, item) -> UICollectionViewCell in
             let tmpCell = cv.dequeueReusableCell(
                 withReuseIdentifier: DetailedCharacterCollectionViewCell.className(),
@@ -194,6 +181,7 @@ extension DetailedCharacterViewController {
         
         self.eventsCollectionView.registerLoading(loading: output.loadingEvents)
         self.eventsCollectionView.registerFetchingMore(fetchingMore: output.fetchingMoreEvents)
+        self.eventsCollectionView.registerForNoData(noDataObs: output.noEvents)
         
         self.eventsCollectionView.startFetchingElements()
     }

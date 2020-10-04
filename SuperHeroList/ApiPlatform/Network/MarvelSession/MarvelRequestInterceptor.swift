@@ -11,6 +11,8 @@ import RxAlamofire
 import Alamofire
 import SwiftHash
 
+
+// Custom Interceptor to set the keys needed to be used in Marvel API
 class MarvelRequestInterceptor: RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         do {

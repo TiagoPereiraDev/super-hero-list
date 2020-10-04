@@ -19,6 +19,16 @@ target 'ApiPlatform' do
   pod 'SwiftHash'
 end
 
+target 'ApiPlatformTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for NetworkPlatform
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxAlamofire'
+  pod 'SwiftHash'
+end
+
 target 'SuperHeroList' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

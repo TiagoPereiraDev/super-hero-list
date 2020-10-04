@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Generic Marvel Constants
 internal struct MarvelConstants {
     static let apiVersion = "v1"
     static let publicApi = "public"

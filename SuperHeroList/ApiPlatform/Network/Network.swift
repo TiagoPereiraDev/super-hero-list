@@ -11,8 +11,7 @@ import Domain
 import RxAlamofire
 import RxSwift
 
-
-
+// Network class to be used internally in order to obtain data from the marvel api
 internal final class Network {
 
     private let endPoint: String
@@ -22,7 +21,15 @@ internal final class Network {
         self.endPoint = endPoint
         self.scheduler = ConcurrentDispatchQueueScheduler(qos: DispatchQoS(qosClass: DispatchQoS.QoSClass.background, relativePriority: 1))
     }
+    
+    /**
+    method that will fetch data with the list of elements inside
 
+    - Parameter path: the endpoint to be used in order to fetch this data
+    - Parameter parameters: all the relevant parameters to be used in this query
+
+    - Returns: Observable with data from the request
+    */
     func getItems(_ path: String, parameters: [String: Any]?) -> Observable<Data> {
         let absolutePath = "\(endPoint)/\(path)"
         return Session.marvelSession.rx
@@ -33,22 +40,5 @@ internal final class Network {
             .map { (response, data) -> Data in
                 return data
         }
-    }
-
-    func getItem(_ path: String, itemId: String) -> Observable<Data> {
-        let absolutePath = "\(endPoint)/\(path)/\(itemId)"
-        return Session.marvelSession.rx
-            .data(.get, absolutePath)
-            .debug()
-            .observeOn(scheduler)
-    }
-
-    func postItem(_ path: String, parameters: [String: Any]) -> Observable<Data> {
-        let absolutePath = "\(endPoint)/\(path)"
-        return Session.marvelSession.rx
-            .request(.post, absolutePath, parameters: parameters)
-            .debug()
-            .observeOn(scheduler)
-            .data()
     }
 }
